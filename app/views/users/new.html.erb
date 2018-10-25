@@ -1,2 +1,24 @@
 <h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+  <%= form_for(@user) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+  <% end %>
